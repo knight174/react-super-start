@@ -63,7 +63,7 @@ export default function App() {
       <br />
 
       <section>
-        <h2>Mihoyo</h2>
+        <h2>JSON Placeholder</h2>
         <Mihoyo />
       </section>
 
