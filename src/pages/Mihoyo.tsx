@@ -1,10 +1,10 @@
-import * as React from "react";
+import { FC, memo, useEffect, useState } from "react";
 
-const Mihoyo: React.FC = () => {
+const Mihoyo: FC = () => {
   console.log("Mihoyo re-render");
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
         "https://bbs-api.mihoyo.com/apihub/api/home/new?gids=2"
@@ -28,4 +28,4 @@ const Mihoyo: React.FC = () => {
   );
 };
 
-export default React.memo(Mihoyo);
+export default memo(Mihoyo);

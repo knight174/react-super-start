@@ -1,9 +1,9 @@
-import React from "react";
+import { FC, memo, useEffect } from "react";
 
-const About: React.FC = () => {
+const About: FC = () => {
   console.log("About re-render");
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log("mounted About 挂载");
     return () => {
       console.log("unmounted About 被卸载");
@@ -13,4 +13,4 @@ const About: React.FC = () => {
   return <div style={{ border: "1px solid #000" }}>About</div>;
 };
 
-export default React.memo(About);
+export default memo(About);
