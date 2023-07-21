@@ -3,9 +3,9 @@ import "./style.css";
 import Header from "./components/Header";
 import About from "./pages/About";
 import Button from "./components/button/Button";
-import { CounterOne } from "./pages/CounterOne";
-import { CounterTwo } from "./pages/CounterTwo";
-import Mihoyo from "./pages/Mihoyo";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/routes";
+import { Fallback } from "./components/Fallback";
 
 // 父节点将数据往下面派发
 export const ColorContext = createContext("");
@@ -18,8 +18,6 @@ export default function App() {
   const [salary, setSalary] = useState(100);
   const [price, setPrice] = useState(998);
   const [visible, setVisible] = useState(true);
-  // useRef: 不会触发组件的重新渲染
-  const countRef = useRef(0) as { current: number };
 
   // useCallback: 缓存函数引用（父组件的重新渲染不会导致 handleClick 再次创建，只有依赖项 age 变化时才会重新创建。）
   const handleClick = useCallback(() => {
@@ -37,19 +35,21 @@ export default function App() {
     console.log("mounted App 挂载（只一次）");
   }, []);
 
-  useEffect(() => {
-    console.log("age 状态变化");
-  }, [age]);
-  useEffect(() => {
-    console.log("salary 状态变化");
-  }, [salary]);
-  useEffect(() => {
-    console.log("price 状态变化");
-  }, [price]);
+  // useEffect(() => {
+  //   console.log("age 状态变化");
+  // }, [age]);
+  // useEffect(() => {
+  //   console.log("salary 状态变化");
+  // }, [salary]);
+  // useEffect(() => {
+  //   console.log("price 状态变化");
+  // }, [price]);
 
   // useEffect(() => {
   //   console.log('依赖数组有状态变化');
   // }, [count, visible, countRef, age, salary, price]);
+
+  return <RouterProvider router={router} fallbackElement={<Fallback />} />;
 
   return (
     <div>
@@ -60,35 +60,9 @@ export default function App() {
         </FontSizeContext.Provider>
       </ColorContext.Provider>
 
-      <br />
-
-      <section>
-        <h2>JSON Placeholder (Test Ajax 👇)</h2>
-        <Mihoyo />
-      </section>
-
-      <br />
-
       {/* Content */}
       <section>
-        <h3>Counter One</h3>
-        <CounterOne />
-
-        <h3>Counter Two</h3>
-        <CounterTwo />
-
         <button onClick={() => setVisible(!visible)}>Toggle About</button>
-        <button
-          onClick={() => {
-            countRef.current++;
-            console.log("countRef.current++", countRef.current);
-          }}
-        >
-          countRef +1
-        </button>
-
-        <p>countRef(not re-render): {countRef.current}</p>
-
         <div>{visible ? <About /> : null}</div>
       </section>
 

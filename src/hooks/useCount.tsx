@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useCountType } from './types';
+import * as React from "react";
+import { useCountType } from "./types";
 
 const useCount: useCountType = (initialValue = 0, step = 1) => {
   const [count, setCount] = React.useState(initialValue);
@@ -19,7 +19,7 @@ const useCount: useCountType = (initialValue = 0, step = 1) => {
   };
 
   React.useEffect(() => {
-    console.log('count 状态变化');
+    console.log("count 状态变化");
     document.title = count.toString();
   }, [count]);
 

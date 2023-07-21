@@ -1,4 +1,4 @@
-import useCount from "../hooks/useCount";
+import useCount from "../../hooks/useCount";
 
 const CounterTwo = () => {
   // custom hook

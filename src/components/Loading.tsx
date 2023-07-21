@@ -1,16 +1,5 @@
 const Loading = () => {
-  return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      Loading...
-    </div>
-  );
+  return <div>Loading...</div>;
 };
 
 export default Loading;
