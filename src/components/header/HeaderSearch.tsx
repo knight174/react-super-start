@@ -18,6 +18,12 @@ export default function HeaderSearch({ setPosts }: HeaderSearchProps) {
     const res = await fetch(
       "https://jsonplaceholder.typicode.com/posts/" + value
     );
+    if (!res.ok) {
+      const errorData = await res.json();
+      console.error(errorData);
+      window.alert("error request");
+      return; // 或者抛出错误，或者其他错误处理逻辑
+    }
     if (!value.trim()) {
       const result: PostItem[] = await res.json();
       setPosts(result);
