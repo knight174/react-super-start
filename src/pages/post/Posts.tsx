@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Post } from "./Post";
 import Loading from "../../components/Loading";
+import Header from "../../components/Header";
+
+// 父节点将数据往下面派发
+export const ColorContext = createContext("");
+export const FontSizeContext = createContext(20);
 
 export interface PostItem {
   id: string;
@@ -36,6 +41,11 @@ export const Posts: React.FC = () => {
     <div>
       <h2>Posts</h2>
       <p>设定 Loading 加载组件, 在 useEffect 中 fetch data。</p>
+      <ColorContext.Provider value={"blue"}>
+        <FontSizeContext.Provider value={20}>
+          <Header />
+        </FontSizeContext.Provider>
+      </ColorContext.Provider>
       {isLoading ? <Loading /> : <Post posts={posts} />}
     </div>
   );

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { ColorContext, FontSizeContext } from '../App';
+import * as React from "react";
+import { ColorContext, FontSizeContext } from "../pages/post/Posts";
 
 function Header() {
-  console.log('Header re-render');
+  console.log("Header re-render");
 
   const color = React.useContext(ColorContext);
 
@@ -18,14 +18,18 @@ function Header() {
 function HeaderTitle() {
   const fontSize = React.useContext(FontSizeContext);
 
-  return <div style={{ fontSize: fontSize + 'px' }}>Header Title</div>;
+  return (
+    <div style={{ fontSize: fontSize.toString() + "px" }}>Header Title</div>
+  );
 }
 
 function HeaderSearch() {
   // useRef：获取 dom 元素
   const inputRef = React.useRef(null);
   const handleClick = () => {
-    inputRef.current.focus();
+    if (inputRef.current) {
+      (inputRef.current as HTMLInputElement).focus();
+    }
   };
 
   return (

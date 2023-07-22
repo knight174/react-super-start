@@ -1,15 +1,9 @@
-import { createContext, useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
-import Header from "./components/Header";
 import About from "./pages/About";
-import Button from "./components/button/Button";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/routes";
 import { Fallback } from "./components/Fallback";
-
-// 父节点将数据往下面派发
-export const ColorContext = createContext("");
-export const FontSizeContext = createContext(20);
 
 export default function App() {
   console.log("App re-render");
@@ -28,13 +22,6 @@ export default function App() {
 
   return (
     <div>
-      {/* Header */}
-      <ColorContext.Provider value={"blue"}>
-        <FontSizeContext.Provider value={20}>
-          <Header />
-        </FontSizeContext.Provider>
-      </ColorContext.Provider>
-
       {/* Content */}
       <section>
         <button onClick={() => setVisible(!visible)}>Toggle About</button>
