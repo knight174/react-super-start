@@ -8,7 +8,8 @@ export const UseRef: React.FC = () => {
 
   return (
     <>
-      <h3>useRef 的值不会触发组件的重新渲染。</h3>
+      <h3>useRef</h3>
+      <p>useRef 的值不会触发组件的重新渲染。</p>
       <p>
         打开控制台，点击 button 可以看到 countRef.current
         是在变化的，但是组件并未重新渲染。

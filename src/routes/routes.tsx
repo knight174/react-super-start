@@ -3,8 +3,9 @@ import { Layout } from "../layouts/Layout";
 import { homeLoader } from "./loaders/homeLoader";
 import { Home } from "../pages/Home";
 import { Posts } from "../pages/post/Posts";
-import { Counter } from "../pages/counter/Counter";
+import { Counter } from "../pages/counter/Counters";
 import { UseRef } from "../pages/UseRef";
+import { UseCallback } from "../pages/UseCallback";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "use-ref",
         Component: UseRef,
+      },
+      {
+        path: "use-callback",
+        Component: UseCallback,
       },
       // {
       //   path: "todos",

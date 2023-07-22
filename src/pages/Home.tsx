@@ -19,6 +19,9 @@ export function Home() {
         <li>
           <Link to="/use-ref">useRef</Link>
         </li>
+        <li>
+          <Link to="/use-callback">useCallback + memo</Link>
+        </li>
       </ul>
     </>
   );

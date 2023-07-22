@@ -35,7 +35,7 @@ export const Posts: React.FC = () => {
   return (
     <div>
       <h2>Posts</h2>
-      <h3>设定 Loading 加载组件, 在 useEffect 中 fetch data。</h3>
+      <p>设定 Loading 加载组件, 在 useEffect 中 fetch data。</p>
       {isLoading ? <Loading /> : <Post posts={posts} />}
     </div>
   );

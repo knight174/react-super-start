@@ -7,7 +7,7 @@ export const Counter: React.FC = () => {
   return (
     <>
       <h2>Counters</h2>
-      <h3>useCount 是自定义 hook，useMemo 用来缓存状态。</h3>
+      <p>useCount 是自定义 hook，useMemo 用来缓存状态。</p>
       <CounterOne />
       <CounterTwo />
     </>
