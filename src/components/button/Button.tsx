@@ -1,8 +1,13 @@
-import * as React from 'react';
-import './button.css';
+import * as React from "react";
+import "./button.css";
 
-function Button({ children, handleClick }) {
-  console.log('Button re-render', children);
+interface ButtonProps {
+  children: React.ReactNode;
+  handleClick: () => void;
+}
+
+function Button({ children, handleClick }: ButtonProps) {
+  console.log("Button re-render", children);
 
   return (
     <div className="button" onClick={handleClick}>
