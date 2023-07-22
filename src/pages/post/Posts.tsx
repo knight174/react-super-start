@@ -43,7 +43,7 @@ export const Posts: React.FC = () => {
       <p>设定 Loading 加载组件, 在 useEffect 中 fetch data。</p>
       <ColorContext.Provider value={"blue"}>
         <FontSizeContext.Provider value={20}>
-          <Header />
+          <Header setPosts={setPosts} />
         </FontSizeContext.Provider>
       </ColorContext.Provider>
       {isLoading ? <Loading /> : <Post posts={posts} />}
