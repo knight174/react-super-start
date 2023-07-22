@@ -11,6 +11,8 @@ export interface PostItem {
 }
 
 export const Posts: React.FC = () => {
+  console.log("Posts re-render");
+
   const [posts, setPosts] = useState<PostItem[]>([]);
   const [isLoading, setIsLoading] = useState<true | false>(true);
 
@@ -33,6 +35,7 @@ export const Posts: React.FC = () => {
   return (
     <div>
       <h2>Posts</h2>
+      <h3>设定 Loading 加载组件, 在 useEffect 中 fetch data。</h3>
       {isLoading ? <Loading /> : <Post posts={posts} />}
     </div>
   );
