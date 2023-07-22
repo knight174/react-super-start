@@ -9,8 +9,8 @@ function Header() {
   return (
     <header>
       <HeaderTitle />
+      <p style={{ color }}>My color is from ColorContext.</p>
       <HeaderSearch />
-      <div style={{ color }}>Header</div>
     </header>
   );
 }
@@ -19,18 +19,29 @@ function HeaderTitle() {
   const fontSize = React.useContext(FontSizeContext);
 
   return (
-    <div style={{ fontSize: fontSize.toString() + "px" }}>Header Title</div>
+    <p style={{ fontSize: fontSize.toString() + "px" }}>
+      My fontSize is from FontSizeContext.
+    </p>
   );
 }
 
 function HeaderSearch() {
   // useRef：获取 dom 元素
   const inputRef = React.useRef(null);
+
   const handleClick = () => {
+    console.log("ccc");
+  };
+
+  const autoFocus = () => {
     if (inputRef.current) {
       (inputRef.current as HTMLInputElement).focus();
     }
   };
+
+  React.useEffect(() => {
+    autoFocus();
+  }, []);
 
   return (
     <div>

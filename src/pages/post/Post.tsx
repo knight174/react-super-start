@@ -2,7 +2,7 @@ import { PostItem } from "./Posts";
 
 export const Post: React.FC<{ posts: PostItem[] }> = ({ posts }) => {
   return (
-    <div style={{ height: "500px", border: "1px solid red", overflow: "auto" }}>
+    <div style={{ height: "300px", border: "1px solid red", overflow: "auto" }}>
       <ul>
         {posts ? (
           posts.map((post) => (
