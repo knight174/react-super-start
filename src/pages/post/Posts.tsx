@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { Post } from "./Post";
 import Loading from "../../components/Loading";
-import Header from "../../components/Header";
+import Header from "../../components/header/Header";
 
 // 父节点将数据往下面派发
 export const ColorContext = createContext("");
