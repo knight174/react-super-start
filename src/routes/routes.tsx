@@ -7,6 +7,7 @@ import { Counter } from '../pages/counter/Counters';
 import { UseRef } from '../pages/UseRef';
 import { UseCallback } from '../pages/UseCallback';
 import { SignInPage } from '../pages/SignInPage';
+import { UseSWR } from '../pages/UseSWR';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'use-callback',
         Component: UseCallback,
+      },
+      {
+        path: 'use-swr',
+        Component: UseSWR,
       },
       {
         path: 'sign_in',

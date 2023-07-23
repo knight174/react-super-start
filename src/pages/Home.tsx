@@ -22,6 +22,9 @@ export function Home() {
         <li>
           <Link to="/use-callback">useCallback + memo</Link>
         </li>
+        <li>
+          <Link to="/use-swr">useSWR + useAjax(custom hook)</Link>
+        </li>
       </ul>
     </>
   );
