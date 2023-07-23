@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from 'react-router-dom';
 
 export const Layout: React.FC = () => {
   return (
@@ -26,6 +26,13 @@ export const Layout: React.FC = () => {
             </button>
           </li> */}
         </ul>
+        <div>
+          <ul>
+            <li>
+              <Link to="/sign_in">Sign in</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
       <Outlet />
     </>

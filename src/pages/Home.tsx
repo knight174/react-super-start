@@ -1,8 +1,8 @@
-import { useLoaderData, Link } from "react-router-dom";
-import { HomeLoaderData } from "../routes/loaders/homeLoader";
+import { useLoaderData, Link } from 'react-router-dom';
+import { HomeLoaderData } from '../routes/loaders/homeLoader';
 
 export function Home() {
-  console.log("Home re-render");
+  console.log('Home re-render');
 
   const data = useLoaderData() as HomeLoaderData;
   return (
