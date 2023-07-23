@@ -6,7 +6,7 @@ import { useLoadingStore } from '../stores/useLoadingStore';
 // 创建一个 axios 实例
 export const ajax = axios.create({
   // 设置 baseURL
-  baseURL: isDev ? '/' : 'http://localhost:3000',
+  baseURL: isDev ? 'http://localhost:3000' : 'http://localhost:3000',
   // 设置请求头
   headers: {
     'Content-Type': 'application/json',
